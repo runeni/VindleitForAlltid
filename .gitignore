@@ -1,0 +1,36 @@
+# .NET build artifacts
+bin/
+obj/
+*.user
+*.suo
+.vs/
+*.userprefs
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+
+# EF Core local DB
+*.db
+*.db-shm
+*.db-wal
+
+# Published output
+publish/
+
+# Node / frontend
+node_modules/
+dist/
+.parcel-cache/
+
+# Environment / secrets
+.env
+.env.local
+*.env
+appsettings.Local.json
+
+# OS
+.DS_Store
+Thumbs.db

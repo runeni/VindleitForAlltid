@@ -1,0 +1,83 @@
+[
+  {
+    "identifier": "tofteholmen",
+    "name": "Tofteholmen",
+    "latitude": 59.514360,
+    "longitude": 10.558361,
+    "altitude": 17,
+    "active": true,
+    "sortOrder": 0
+  },
+  {
+    "identifier": "mellomsletter",
+    "name": "Mellom Sletter",
+    "latitude": 59.289643,
+    "longitude": 10.677728,
+    "altitude": 11,
+    "active": true,
+    "sortOrder": 0
+  },
+  {
+    "identifier": "stromtangen",
+    "name": "Strømtangen",
+    "latitude": 59.151080,
+    "longitude": 10.829420,
+    "altitude": 10,
+    "active": true,
+    "sortOrder": 0
+  },
+  {
+    "identifier": "brattestø",
+    "name": "Brattestø",
+    "latitude": 59.055835,
+    "longitude": 10.918160,
+    "altitude": 1,
+    "active": true,
+    "sortOrder": 0
+  },
+  {
+    "identifier": "ørekroken",
+    "name": "Ørekroken",
+    "latitude": 59.030428,
+    "longitude": 11.010493,
+    "altitude": 6,
+    "active": true,
+    "sortOrder": 0
+  },
+  {
+    "identifier": "kjaerstranda",
+    "name": "Kjærstranda",
+    "latitude": 58.979209,
+    "longitude": 9.966165,
+    "altitude": 0,
+    "active": true,
+    "sortOrder": 0
+  },
+  {
+    "identifier": "lista",
+    "name": "Lista",
+    "latitude": 58.109,
+    "longitude": 6.5675,
+    "altitude": 14,
+    "active": true,
+    "sortOrder": 0
+  },
+  {
+    "identifier": "skalhamn",
+    "name": "Skalhamn",
+    "latitude": 58.31667,
+    "longitude": 11.4,
+    "altitude": 0,
+    "active": true,
+    "sortOrder": 0
+  },
+  {
+    "identifier": "apelviken",
+    "name": "Apelviken",
+    "latitude": 57.08315,
+    "longitude": 12.26678,
+    "altitude": 6,
+    "active": true,
+    "sortOrder": 8
+  }
+]
