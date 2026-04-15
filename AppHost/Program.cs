@@ -13,6 +13,7 @@ var api = builder.AddProject<Projects.Api>("api")
 
 builder.AddDockerfile("frontend", "../frontend")
     .WithHttpEndpoint(port: 3000, targetPort: 80)
+    .WithReference(api)
     .WaitFor(api);
 
 builder.Build().Run();
