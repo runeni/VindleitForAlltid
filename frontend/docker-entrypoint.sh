@@ -1,5 +1,9 @@
 #!/bin/sh
-# Map the Aspire service-discovery env var to the name used in nginx.conf template.
-# Aspire injects: services__api__http__0=http://<host>:<port>
-# nginx template expects: API_URL
+# Resolve the API upstream URL from the Aspire-injected env var and write
+# the final nginx config. We do this ourselves rather than relying on the
+# nginx template mechanism because scripts in /docker-entrypoint.d/ run in
+# subshells, so 'export' cannot set variables for later entrypoint steps.
 export API_URL="${services__api__http__0:-http://localhost:5000}"
+envsubst '$API_URL' \
+  < /etc/nginx/nginx.conf.template \
+  > /etc/nginx/conf.d/default.conf
