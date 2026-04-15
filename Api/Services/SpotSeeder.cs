@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Api.Services;
 
-public class SpotSeeder(AppDbContext db, IWebHostEnvironment env, ILogger<SpotSeeder> logger)
+public class SpotSeeder(AppDbContext db, ILogger<SpotSeeder> logger)
 {
     private record SpotJson(
         string Identifier,
@@ -19,10 +19,19 @@ public class SpotSeeder(AppDbContext db, IWebHostEnvironment env, ILogger<SpotSe
 
     public async Task SeedAsync(CancellationToken ct = default)
     {
-        var path = Path.Combine(env.ContentRootPath, "spots.json");
-        if (!File.Exists(path))
+        // ContentRootPath points at the source directory under Aspire (project dir),
+        // but spots.json is copied to the build output. Search both so it works in
+        // all environments: Aspire run, dotnet run, and published deployments.
+        var candidates = new[]
         {
-            logger.LogWarning("spots.json not found at {Path} — skipping seed", path);
+            Path.Combine(AppContext.BaseDirectory, "spots.json"),
+            Path.Combine(Directory.GetCurrentDirectory(), "spots.json"),
+        };
+        var path = candidates.FirstOrDefault(File.Exists);
+        if (path is null)
+        {
+            logger.LogWarning("spots.json not found in any candidate path — skipping seed. Searched: {Paths}",
+                string.Join(", ", candidates));
             return;
         }
 
