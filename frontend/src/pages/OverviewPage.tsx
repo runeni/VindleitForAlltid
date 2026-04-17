@@ -56,7 +56,8 @@ export function OverviewPage() {
         <div className="flex items-center gap-3 mb-6 text-xs">
           <span className="text-slate-400">Wind strength:</span>
           {[
-            { label: '< 7 m/s light', cls: 'bg-slate-700 text-slate-300' },
+            { label: '< 5 m/s very light', cls: 'bg-slate-700 text-slate-300' },
+            { label: '5–6 m/s light', cls: 'bg-sky-800 text-sky-100' },
             { label: '7–12 m/s good', cls: 'bg-green-800 text-green-100' },
             { label: '12–18 m/s strong', cls: 'bg-yellow-700 text-yellow-100' },
             { label: '> 18 m/s dangerous', cls: 'bg-red-800 text-red-100' },
