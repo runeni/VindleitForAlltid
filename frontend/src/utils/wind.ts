@@ -6,10 +6,13 @@
  *  > 18   → red    (too strong / dangerous)
  */
 
-export type WindLevel = 'none' | 'light' | 'good' | 'strong' | 'dangerous';
+export type WindLevel = 'none' | 'very-light' | 'light' | 'good' | 'strong' | 'dangerous';
+
+const VERY_LIGHT_MAX = 5;
 
 export function getWindLevel(speed: number | null | undefined): WindLevel {
   if (speed == null) return 'none';
+  if (speed < VERY_LIGHT_MAX) return 'very-light';
   if (speed < 7) return 'light';
   if (speed < 12) return 'good';
   if (speed < 18) return 'strong';
@@ -18,21 +21,23 @@ export function getWindLevel(speed: number | null | undefined): WindLevel {
 
 export function windLevelBg(level: WindLevel): string {
   switch (level) {
-    case 'none':      return 'bg-slate-800 text-slate-500';
-    case 'light':     return 'bg-slate-700 text-slate-300';
-    case 'good':      return 'bg-green-800 text-green-100';
-    case 'strong':    return 'bg-yellow-700 text-yellow-100';
-    case 'dangerous': return 'bg-red-800 text-red-100';
+    case 'none':        return 'bg-slate-800 text-slate-500';
+    case 'very-light':  return 'bg-slate-700 text-slate-300';
+    case 'light':       return 'bg-blue-800 text-blue-100';
+    case 'good':        return 'bg-green-800 text-green-100';
+    case 'strong':      return 'bg-yellow-700 text-yellow-100';
+    case 'dangerous':   return 'bg-red-800 text-red-100';
   }
 }
 
 export function windLevelBorder(level: WindLevel): string {
   switch (level) {
-    case 'none':      return 'border-slate-700';
-    case 'light':     return 'border-slate-500';
-    case 'good':      return 'border-green-600';
-    case 'strong':    return 'border-yellow-500';
-    case 'dangerous': return 'border-red-600';
+    case 'none':        return 'border-slate-700';
+    case 'very-light':  return 'border-slate-500';
+    case 'light':       return 'border-blue-500';
+    case 'good':        return 'border-green-600';
+    case 'strong':      return 'border-yellow-500';
+    case 'dangerous':   return 'border-red-600';
   }
 }
 
