@@ -43,9 +43,9 @@ describe('windLevelBg', () => {
     expect(result).toMatch(/slate/);
   });
 
-  it('returns blue classes for light', () => {
+  it('returns sky classes for light', () => {
     const result = windLevelBg('light');
-    expect(result).toMatch(/blue/);
+    expect(result).toMatch(/sky/);
   });
 });
 
@@ -55,8 +55,8 @@ describe('windLevelBorder', () => {
     expect(result).toMatch(/slate/);
   });
 
-  it('returns blue border for light', () => {
+  it('returns sky border for light', () => {
     const result = windLevelBorder('light');
-    expect(result).toMatch(/blue/);
+    expect(result).toMatch(/sky/);
   });
 });

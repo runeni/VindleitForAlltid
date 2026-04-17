@@ -23,7 +23,7 @@ export function windLevelBg(level: WindLevel): string {
   switch (level) {
     case 'none':        return 'bg-slate-800 text-slate-500';
     case 'very-light':  return 'bg-slate-700 text-slate-300';
-    case 'light':       return 'bg-blue-800 text-blue-100';
+    case 'light':       return 'bg-sky-800 text-sky-100';
     case 'good':        return 'bg-green-800 text-green-100';
     case 'strong':      return 'bg-yellow-700 text-yellow-100';
     case 'dangerous':   return 'bg-red-800 text-red-100';
@@ -34,7 +34,7 @@ export function windLevelBorder(level: WindLevel): string {
   switch (level) {
     case 'none':        return 'border-slate-700';
     case 'very-light':  return 'border-slate-500';
-    case 'light':       return 'border-blue-500';
+    case 'light':       return 'border-sky-500';
     case 'good':        return 'border-green-600';
     case 'strong':      return 'border-yellow-500';
     case 'dangerous':   return 'border-red-600';
