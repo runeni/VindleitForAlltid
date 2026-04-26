@@ -14,8 +14,8 @@ public class YrForecastClient(HttpClient httpClient, ILogger<YrForecastClient> l
     public async Task<YrForecastResponse?> GetForecastAsync(
         double lat, double lon, int altitude, CancellationToken ct = default)
     {
-        var url = $"https://api.met.no/weatherapi/locationforecast/2.0/compact" +
-                  $"?lat={lat:F6}&lon={lon:F6}&altitude={altitude}";
+        var url = FormattableString.Invariant(
+            $"https://api.met.no/weatherapi/locationforecast/2.0/compact?lat={lat:F6}&lon={lon:F6}&altitude={altitude}");
 
         try
         {

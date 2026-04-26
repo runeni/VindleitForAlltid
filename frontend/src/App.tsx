@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom'
 import { OverviewPage } from './pages/OverviewPage'
 import { SpotDetailPage } from './pages/SpotDetailPage'
 import { AdminSpotsPage } from './pages/AdminSpotsPage'
+import { SpotMapPage } from './pages/SpotMapPage'
 
 function App() {
   return (
@@ -21,6 +22,14 @@ function App() {
             Overview
           </NavLink>
           <NavLink
+            to="/map"
+            className={({ isActive }) =>
+              isActive ? 'text-blue-400 font-medium' : 'text-gray-400 hover:text-gray-200'
+            }
+          >
+            Map
+          </NavLink>
+          <NavLink
             to="/admin/spots"
             className={({ isActive }) =>
               isActive ? 'text-blue-400 font-medium' : 'text-gray-400 hover:text-gray-200'
@@ -34,6 +43,7 @@ function App() {
           <Routes>
             <Route path="/" element={<OverviewPage />} />
             <Route path="/spots/:id" element={<SpotDetailPage />} />
+            <Route path="/map" element={<SpotMapPage />} />
             <Route path="/admin/spots" element={<AdminSpotsPage />} />
           </Routes>
         </main>
